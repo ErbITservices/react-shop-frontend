@@ -370,11 +370,14 @@ function CartPage(props) {
                 return setaddmodalIsOpen(true)
             }
         }
+console.log("Mihir1");
+
 
         setischeckoutLoading(true) 
         if(!window.Razorpay) {
             await addDynamicScript("https://checkout.razorpay.com/v1/checkout.js") //script is not loading at first time dk why so i added this XD
         } 
+        console.log("Mihir2");
 
         const {data:{order}} = await userRequest.post("api/buy/checkout",{
             user:user._id,
@@ -385,6 +388,8 @@ function CartPage(props) {
                 email: user.email,
             }
         });
+        console.log("MIhir3");
+        
 
         const {data:{key}} = await userRequest.get("api/buy/getkey");
         setischeckoutLoading(false) 

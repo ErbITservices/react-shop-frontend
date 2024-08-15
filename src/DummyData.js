@@ -49,26 +49,76 @@ export const hero = [
   
 
 export const Categoris = [
-    {
-        id: 1,
-        cat: "jewelery",
-        img: "https://media.istockphoto.com/photos/elegant-jewelry-set-of-white-gold-ring-necklace-and-earrings-with-picture-id1216928523?b=1&k=20&m=1216928523&s=612x612&w=0&h=Gw14mYpKwp24oaX2O03m7W83v6p5_Y_hnfa2tKbQtLs=",
-        title: "jewelery",
-        
-    },
-    {
-        id: 2,
-        cat: "clotiong",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPD8NKQTHTsZ6HnOE52Ghjg9QqwzsP_NiZYg&usqp=CAU",
-        title: "clothing",
-        
-    },
-    {
-        id: 3,
-        cat: "bottom",
-        img: "https://png.pngtree.com/png-clipart/20190920/original/pngtree-technology-product-office-computer-png-image_4642139.jpg",
-        title: "bottom's",
-        
-    },
-    
-]
+  {
+    id: 1,
+    cat: "MOUSE&KEYBORD",
+    img: "https://t3.ftcdn.net/jpg/01/82/47/28/360_F_182472844_YJTLFE1dmdK0KJWF6AdxU5A24eInzXxN.jpg",
+    title: "Mouse & Key Board",
+  },
+  {
+    id: 2,
+    cat: "STORAGEDEVICE",
+    img: "https://cdn-aogbe.nitrocdn.com/LYdLTjFVvLmCmiqbCPnUYWCzZdgiptoK/assets/images/optimized/rev-735e2b4/www.currentware.com/wp-content/uploads/2021/01/Disable-USB-Ports-1200x480.jpg",
+    title: "Storage Device",
+  },
+  {
+    id: 3,
+    cat: "PRINTERMATERIAL",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0qgK3Owpt32heaID0uKL3Av_hlAPsKG8oBA&s",
+    title: "Printer Material",
+  },
+  {
+    id: 4,
+    cat: "LAMINATOR",
+    img: "https://img.freepik.com/premium-photo/photo-lamination-machines-black-background_996135-24395.jpg",
+    title: "Laminator",
+  },
+  {
+    id: 5,
+    cat: " SCANNER",
+    img: "https://computerbaba.co.in/wp-content/uploads/2023/04/best-canon-document-scanner-at-cheapest-price.jpg",
+    title: "Scanner ",
+  },
+  {
+    id: 6,
+    cat: "ROUTER",
+    img: "https://storage-asset.msi.com/global/picture/news/2023/wifi/gaming-router-20230314-1.jpg",
+    title: "Router ",
+  },
+  {
+    id: 7,
+    cat: "STATIONARY",
+    img: "https://c8.alamy.com/comp/TTEMK8/colourful-stationery-on-black-background-TTEMK8.jpg",
+    title: "Stationery",
+  },
+  {
+    id: 8,
+    cat: "SPEAKER",
+    img: "https://img.freepik.com/premium-photo/image-photograph-pair-hifi-level-music-speakers-with-two-speakers-black-background_88135-33694.jpg",
+    title: "Speaker",
+  },
+  {
+    id: 9,
+    cat: "CABLE",
+    img: "https://img.freepik.com/free-photo/microphones-cables-black-background_87358-37.jpg",
+    title: "Cable",
+  },
+  {
+    id: 10,
+    cat: "CCTVCAMERA",
+    img: "https://img.freepik.com/premium-photo/surveillance-camera-videcam-cctv-camera-isolated-black-background-close-up-home-security-system-concept_154092-18151.jpg",
+    title: "CCTV Camera",
+  },
+  {
+    id: 11,
+    cat: "BOOK",
+    img: "https://img.freepik.com/free-photo/books-assortment-with-dark-background_23-2148898297.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1723593600&semt=ais_hybrid",
+    title: "Book",
+  },
+  {
+    id: 12,
+    cat: "Other",
+    img: "https://png.pngtree.com/png-clipart/20190920/original/pngtree-technology-product-office-computer-png-image_4642139.jpg",
+    title: "Other",
+  },
+];
