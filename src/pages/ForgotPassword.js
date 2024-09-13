@@ -104,6 +104,8 @@ const ForgotPassword = () => {
         try {   
             const {data} = await publicRequest.post("/api/auth/forgotpass", {email})
             console.log(data)
+            console.log("hey");
+            
             //checking if req was success
             if(data.sucess) {
                 dispatch(setError(data.message))

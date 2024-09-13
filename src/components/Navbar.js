@@ -15,11 +15,12 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import logo from "../assets/logo.png";
 
 const link = {
   color: "black",
-    textDecoration: "none",
-  
+  textDecoration: "none",
+    
 };
 const navoption = {
   color: "grey",
@@ -28,7 +29,7 @@ const navoption = {
 };
 
 const Container = styled.div`
-  max-height: 60px;
+  max-height: 100px;
   box-shadow: 0 3px 2px -1px rgba(0, 0, 0, 0.1);
 
   //sticky navbar
@@ -110,9 +111,13 @@ const Center = styled.div`
     flex: 2,
   })}
 `;
-const Logo = styled.h1`
-  font-weight: bold;
-  text-align: center;
+const Logo = styled.div`
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px 10px;
 
   ${mobile({
     textAlign: "start",
@@ -251,19 +256,18 @@ function Navbar() {
     <Container>
       <Wrapper>
         <Left>
-          <Logo>
-            <Link onClick={() => redirect("/")} style={link} to="/">
-              Panara
-            </Link>
-                  </Logo>
-                  
-          <a href="/aboutus" style={navoption}>
+          <Logo
+            onClick={() => redirect("/")}
+            style={{ backgroundImage: `url(${logo})` }}
+          ></Logo>
+
+          <a href="/aboutus" className="highlight">
             About US
           </a>
-          <a href="/" style={navoption}>
+          <a href="/Services" className="highlight">
             Our Services
           </a>
-          <a href="/" style={navoption}>
+          <a href="/" className="highlight">
             Contect Us
           </a>
         </Left>
@@ -293,12 +297,12 @@ function Navbar() {
           {!user ? (
             <>
               <MenueItem>
-                <Link style={link} to="/signup">
-                  Sing Up
+                <Link className="highlight" style={link} to="/signup">
+                  Sign Up
                 </Link>
               </MenueItem>
               <MenueItem>
-                <Link style={link} to="/login">
+                <Link className="highlight" style={link} to="/login">
                   Log In
                 </Link>
               </MenueItem>

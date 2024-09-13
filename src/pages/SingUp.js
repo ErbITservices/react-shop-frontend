@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar'
 import { mobile } from '../Responsive'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { signUp } from '../redux/apiCalls'
+
+import mainbackground from "../assets/download.jpg";
 
 //import { resetsignupError } from '../redux/userRedux'
 
@@ -104,7 +106,7 @@ function SingUp(props) {
 
   //to change title as soon as component mounts
   useEffect(() => {
-    document.title = `SatnamCreation - ${props.title}`
+    document.title = `PANARAIT - ${props.title}`
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   const initialValue = { firstName: "", lastName: "", email: "", number: "", password: "", confirmPassword: "", userIP: ""}
@@ -112,6 +114,7 @@ function SingUp(props) {
   const [formErrors, setFormErrors] = useState({})
   const [isSubmit, setIsSubmit] = useState(false)
   const dispatch = useDispatch();
+  const navigator = useNavigate();
 
   
   const handleOnChange = (e) => {
@@ -122,7 +125,10 @@ function SingUp(props) {
   const handleSubmit = (e) => {
       e.preventDefault();
       setFormErrors(handleValidate(formValues))
-      setIsSubmit(true)
+    setIsSubmit(true)
+    if (signUp(dispatch, formValues)) {
+      navigator("/");
+    }
   }
 
   useEffect(() => {
@@ -134,6 +140,7 @@ function SingUp(props) {
         // console.log( "lol "+ JSON.stringify(formValues))
         // console.log("ip")
         signUp(dispatch, formValues);
+        
       }
     }
     push();
@@ -173,43 +180,75 @@ function SingUp(props) {
   // }
   
   return (
-    
     <>
-    <Navbar/>
-    <Container>
-      {signupSuccess ? <SignupSuccessDiv>Signup Successfull!</SignupSuccessDiv> : 
-      <Wrapper>
-          <Title>Sign Up</Title>
-          <Form onSubmit={handleSubmit} autoComplete="on">
-            <Input name='firstName' placeholder='Name' onChange={handleOnChange}/>
-            <FormValidationError>{formErrors.firstName}</FormValidationError>
+      <Navbar />
+      <Container style={{ backgroundImage: `url(${mainbackground})` }}>
+        {signupSuccess ? (
+          <SignupSuccessDiv>Signup Successfull!</SignupSuccessDiv>
+        ) : (
+          <Wrapper>
+            <Title>Sign Up</Title>
+            <Form onSubmit={handleSubmit} autoComplete="on">
+              <Input
+                name="firstName"
+                placeholder="Name"
+                onChange={handleOnChange}
+              />
+              <FormValidationError>{formErrors.firstName}</FormValidationError>
 
-            <Input name='lastName' placeholder='Last Name' onChange={handleOnChange}/>
-            <FormValidationError>{formErrors.lastName}</FormValidationError>
+              <Input
+                name="lastName"
+                placeholder="Last Name"
+                onChange={handleOnChange}
+              />
+              <FormValidationError>{formErrors.lastName}</FormValidationError>
 
-            <Input name='number' type="number" placeholder='Phone Number' onChange={handleOnChange}/>
-            <FormValidationError>{formErrors.number}</FormValidationError>
+              <Input
+                name="number"
+                type="number"
+                placeholder="Phone Number"
+                onChange={handleOnChange}
+              />
+              <FormValidationError>{formErrors.number}</FormValidationError>
 
-            <Input name='email' type="email" placeholder='Email' onChange={handleOnChange} />
-            <FormValidationError>{formErrors.email}</FormValidationError>
+              <Input
+                name="email"
+                type="email"
+                placeholder="Email"
+                onChange={handleOnChange}
+              />
+              <FormValidationError>{formErrors.email}</FormValidationError>
 
-            <Input name='password' type="password" placeholder='Password' onChange={handleOnChange} autoComplete="off"/><br/>
-            <FormValidationError>{formErrors.password}</FormValidationError>
+              <Input
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={handleOnChange}
+                autoComplete="off"
+              />
+              <br />
+              <FormValidationError>{formErrors.password}</FormValidationError>
 
-            <Input name='confirmPassword' type="password" placeholder='Conform Password' onChange={handleOnChange} autoComplete="off"/>
-            <FormValidationError>{formErrors.cpassword}</FormValidationError>
-            {/* to check all inputes are filled */}
-            <Button  disabled={isFetching}>Sing Up</Button>
-             
-            
-          </Form>
-          {error && <Error>{error.error}</Error>}
-        <HelpLink ><Link to="/login">Already Have Account?</Link></HelpLink>
-      </Wrapper> }
-    </Container>
-    </> 
-    
-  )
+              <Input
+                name="confirmPassword"
+                type="password"
+                placeholder="Conform Password"
+                onChange={handleOnChange}
+                autoComplete="off"
+              />
+              <FormValidationError>{formErrors.cpassword}</FormValidationError>
+              {/* to check all inputes are filled */}
+              <Button disabled={isFetching}>Sing Up</Button>
+            </Form>
+            {error && <Error>{error.error}</Error>}
+            <HelpLink>
+              <Link to="/login">Already Have Account?</Link>
+            </HelpLink>
+          </Wrapper>
+        )}
+      </Container>
+    </>
+  );
   }
 
 export default SingUp

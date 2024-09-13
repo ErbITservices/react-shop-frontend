@@ -8,10 +8,15 @@ import Footer from '../components/Footer'
 import { useLocation } from 'react-router-dom'
 import { mobile } from '../Responsive'
 
+import mainbackground from "../assets/download.jpg";
+
 
 const Container = styled.div`
-    scroll-behavior: smooth;
-`
+  scroll-behavior: smooth;
+
+  background-position: center;
+  background-size: cover;
+`;
 const Title = styled.h1`
     margin: 20px 20px;
 `
@@ -72,52 +77,49 @@ function ProductList(props) {
       }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Container>
-        <Announcments/>
-        <Navbar/>
-        <Title>{cat || "All Products"}</Title>
-        <FilterContainer>
-            <Filter>
-                <FilterText>Filter Products:</FilterText>
-                <Select name='color' onChange={handleFiters}>
-                    <Options defaultValue>Color</Options>
-                    <Options>red</Options>
-                    <Options>green</Options>
-                    <Options>blue</Options>
-                    <Options>yallow</Options>
-                    <Options>black</Options>
-                    <Options>white</Options>
-                </Select>
-                <Select name='size' onChange={handleFiters}>
-                    <Options defaultValue>Size</Options>
-                    <Options>S</Options>
-                    <Options>M</Options>
-                    <Options>L</Options>
-                    <Options>XL</Options>
-                    <Options>XXL</Options>
-                    <Options>XXXL</Options>
-                </Select>
-            </Filter>
-            <Filter>
-                <FilterText>Sort Products:</FilterText>
-                <Select onChange={e => setSort(e.target.value)}>
-                    <Options defaultValue>Newest</Options>
-                    <Options value="topRated">Top rated</Options>
-                    <Options value="toppurchased">Most Purchased</Options>
-                    <Options value="topreviewed">Most reviewed</Options>
-                    <Options value="price-desc">price(H T L)</Options>
-                    <Options value="price-asc">Price(L T H)</Options>
-
-                    
-                </Select>
-            </Filter>
-        </FilterContainer>
-        <Product cat={cat} filter={filter} sort={sort} />
-        <NewsLetter/>
-        <Footer/>
-        
+    <Container style={{ backgroundImage: `url(${mainbackground})` }}>
+      <Announcments />
+      <Navbar />
+      <Title>{cat || "All Products"}</Title>
+      <FilterContainer>
+        <Filter>
+          <FilterText>Filter Products:</FilterText>
+          <Select name="color" onChange={handleFiters}>
+            <Options defaultValue>Color</Options>
+            <Options>red</Options>
+            <Options>green</Options>
+            <Options>blue</Options>
+            <Options>yallow</Options>
+            <Options>black</Options>
+            <Options>white</Options>
+          </Select>
+          <Select name="size" onChange={handleFiters}>
+            <Options defaultValue>Size</Options>
+            <Options>S</Options>
+            <Options>M</Options>
+            <Options>L</Options>
+            <Options>XL</Options>
+            <Options>XXL</Options>
+            <Options>XXXL</Options>
+          </Select>
+        </Filter>
+        <Filter>
+          <FilterText>Sort Products:</FilterText>
+          <Select onChange={(e) => setSort(e.target.value)}>
+            <Options defaultValue>Newest</Options>
+            <Options value="topRated">Top rated</Options>
+            <Options value="toppurchased">Most Purchased</Options>
+            <Options value="topreviewed">Most reviewed</Options>
+            <Options value="price-desc">price(H T L)</Options>
+            <Options value="price-asc">Price(L T H)</Options>
+          </Select>
+        </Filter>
+      </FilterContainer>
+      <Product  cat={cat} filter={filter} sort={sort} />
+      <NewsLetter />
+      <Footer />
     </Container>
-  )
+  );
 }
 
 export default ProductList

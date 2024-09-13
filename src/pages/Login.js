@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar'
 import { mobile } from '../Responsive'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../redux/apiCalls'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -90,19 +90,21 @@ function Login(props) {
 
   //to change title as soon as component mounts
   useEffect(() => {
-    document.title = `SatnamCreation - ${props.title}`
+    document.title = `Panara - ${props.title}`
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { isFetching, isError, currentUser} = useSelector(state => state.user)
-
+  const navigator = useNavigate();
   const dispatch = useDispatch()
   const submit = async (e) => {
     
     e.preventDefault();
     login( dispatch ,{ email , password})
-
+    if (login( dispatch ,{ email , password})) {
+      navigator("/");
+    }
   }
 
   return (

@@ -21,6 +21,7 @@ const ImageWrapper = styled.div`
     max-height: 65vh;
     max-height: 65dvh;
     overflow: hidden;
+    border-radius: 20px;
 `
 
 const Image = styled.img`
@@ -76,16 +77,16 @@ function Slider() {
 
   return (
     <Container>
-        <ImageWrapper>
-            <Image src='https://themanufacturer-cdn-1.s3.eu-west-2.amazonaws.com/wp-content/uploads/2018/07/14113818/Depositphotos_160634808_m-2015.jpg'/>
-        </ImageWrapper>
-        <Info>
-            <Title>{heroInfo.title}</Title>
-            <Description>{heroInfo.description}</Description>
-            <Button onClick={() =>navigate("products/all")}>{heroInfo.cta}</Button>
-        </Info>
+      <ImageWrapper>
+        <Image src="https://www.panarait.org/_next/image?url=https%3A%2F%2Fcdn.dotpe.in%2FkiranaStatic%2FPremium_Images%2FMobileAccessories%2FwebImages%2FJPEG%2Fbgth1.jpg&w=1920&q=75" />
+      </ImageWrapper>
+      <Info>
+        <Title>{heroInfo.title}</Title>
+        <Description>{heroInfo.description}</Description>
+        <Button onClick={() => navigate("products/all")}>{heroInfo.cta}</Button>
+      </Info>
     </Container>
-  )
+  );
 }
 
 export default Slider

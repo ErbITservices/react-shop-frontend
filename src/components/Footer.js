@@ -5,15 +5,13 @@ import styled from 'styled-components'
 import{mobile} from '../Responsive'
 
 const Container = styled.div`
-    display: flex ;
-    background-color: #F7E9D7;
-    height: fit-content;
-    ${mobile({
-        flexDirection: 'column',
-    })}
-        
-    
-`
+  display: flex;
+     
+  height: fit-content;
+  ${mobile({
+    flexDirection: "column",
+  })}
+`;
 const Left = styled.div`
     flex: 1;
     padding-top: 20px;
@@ -26,9 +24,21 @@ const Left = styled.div`
 const Logo = styled.h1`
 
 `
+const Contain = styled.div`
+background: rgba( 255, 255, 255, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20.5px );
+-webkit-backdrop-filter: blur( 9.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );}
+`;
 const Description = styled.p`
     margin: 20px 0px;
 `
+const Branding = styled.p`
+  margin: 20px 0px;
+  text-align: center;
+`;
 const SocialContainer = styled.div`
     display: flex;
     
@@ -90,57 +100,88 @@ const ContectItem = styled.p`
 
 function Footer() {
   return (
-    <Container>
-        
+    <Contain>
+      <Container>
         <Left>
-            <Logo>Name.</Logo>
-            <Description>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod possimus, dolor placeat voluptate ipsam delectus repellendus, laborum sunt ratione id obcaecati repudiandae, adipisci nihil fugit autem dignissimos quo! Officia, corporis?
-            </Description>
-            <SocialContainer>
-                <SocialIcons color='3b5998' href='https://www.facebook.com/' target="_blank">
-                    <Facebook/>
-                </SocialIcons>
-                <SocialIcons color='bc2a8d' href='https://www.instagram.com/' target="_blank">
-                    <Instagram />
-                </SocialIcons>
-                <SocialIcons color='075e54' href='https://www.whatsapp.com/' target="_blank">
-                    <WhatsApp />
-                </SocialIcons>
-                <SocialIcons color='4885ed' href='https://www.google.com/' target="_blank">
-                    <Google />
-                </SocialIcons>
-            </SocialContainer>
+          <Logo>PanaraIT.</Logo>
+          <Description>
+            We are Panara Enterprise Pvt LTD and our company has successfully
+            completed many projects with Our Government Of India and also we
+            have worked with our State Go...
+          </Description>
+          <SocialContainer>
+            <SocialIcons
+              color="3b5998"
+              href="https://www.facebook.com/"
+              target="_blank"
+            >
+              <Facebook />
+            </SocialIcons>
+            <SocialIcons
+              color="bc2a8d"
+              href="https://www.instagram.com/"
+              target="_blank"
+            >
+              <Instagram />
+            </SocialIcons>
+            <SocialIcons
+              color="075e54"
+              href="https://www.whatsapp.com/"
+              target="_blank"
+            >
+              <WhatsApp />
+            </SocialIcons>
+            <SocialIcons
+              color="4885ed"
+              href="https://www.google.com/"
+              target="_blank"
+            >
+              <Google />
+            </SocialIcons>
+          </SocialContainer>
         </Left>
         <Center>
-            <Title>Useful Links</Title>
-            <List>
-                <ListItem>Product 1</ListItem>
-                <ListItem>Product 2</ListItem>
-                <ListItem>Product 3</ListItem>
-                <ListItem>Login</ListItem>
-                <ListItem>Sign up</ListItem>
-                <ListItem>Wish list</ListItem>
-                <ListItem>Cart</ListItem>
-                <ListItem>Categorys</ListItem>
-                <ListItem>Terms</ListItem>
-                <ListItem>My Account</ListItem>
-            </List>
+          <Title>Useful Links</Title>
+          <List>
+            <ListItem>Mouse & Key Board</ListItem>
+            <ListItem>Printer Material</ListItem>
+            <ListItem>Scanner</ListItem>
+            <ListItem>Login</ListItem>
+            <ListItem>Sign up</ListItem>
+            <ListItem>Wish list</ListItem>
+            <ListItem>Cart</ListItem>
+            <ListItem>Categorys</ListItem>
+            <ListItem>Terms</ListItem>
+            <ListItem>My Account</ListItem>
+          </List>
         </Center>
         <Right>
-        <Title>Contect Us</Title>
-            <ContectItem>
-                <Map/> Street:  Shop No 24, Anand Sagar Chs, Sector 17, Vashi<br/>City:   Mumbai<br/>State/province/area:    Maharashtra<br/>Zip code  400703<br/>Country  India
-            </ContectItem> 
-            <ContectItem>
-                <Call/>+91 02256103968
-            </ContectItem> 
-            <ContectItem>
-                <Email/> vc8bp3@gmail.com
-            </ContectItem> 
+          <Title>Contect Us</Title>
+          <ContectItem>
+            <Map /> 8, Third Floor, Sukh Sagar Complex, Near Kakdiya Hospital,
+            Bapunagar
+            <br />
+            City: AHMEDABAD
+            <br />
+            State/province/area: GUJARAT
+            <br />
+            Zip code 382350
+            <br />
+            Country India
+          </ContectItem>
+          <ContectItem>
+            <Call />
+            +91 8160628914
+          </ContectItem>
+          <ContectItem>
+            <Email /> patelmihir2712005@gmail.com
+          </ContectItem>
         </Right>
-    </Container>
-  )
+      </Container>
+        <Branding>Powered by ERBIT SERVICES </Branding>
+      
+    </Contain>
+  );
 }
 
 export default Footer

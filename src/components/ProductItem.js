@@ -134,7 +134,7 @@ function ProductItem(data) {
 
   return (
     
-      <Container>
+      <Container >
         <Link style={link}  to={`/product/${_id}`}>
           <Wrapper>
             <Image src={img} /> 

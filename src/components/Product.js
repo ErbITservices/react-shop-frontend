@@ -32,16 +32,22 @@ const LoadMore = styled.button`
   }
 `
 const Wrapper = styled.div`
-    padding: 20px;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    ${mobile({
-      padding: "0px",
-      gap: "0"
-    })}
-`
+  padding: 20px;
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  ${mobile({
+    padding: "0px",
+    gap: "0",
+  })}
+`;
 
 
 function Product(props) {

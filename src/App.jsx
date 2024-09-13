@@ -18,6 +18,8 @@ import ScrollToTop from './components/ScrollToTop';
 import OrdersPage from './pages/OrdersPage';
 import GetUserAddress from './components/GetUserAddress';
 import Aboutus from './pages/aboutus';
+import Services from './pages/Services';
+import ComplainRegister from './pages/ComplainRegister';
 
 const IsNotLogin = () => { //users can only access this routes if they are not logedin
   const user = useSelector(state => state.user?.currentUser);
@@ -31,33 +33,58 @@ const IsLogin = () => { //only Loged in users can access this
 
 const App = () => {
   
-  return (  
+  return (
     <>
-    <ScrollToTop/>
+      <ScrollToTop />
 
-    <Routes>
+      <Routes>
+        <Route element={<IsNotLogin />}>
+          <Route exact path="/login" element={<Login title="Login" />} />
+          <Route exact path="/signup" element={<SingUp title="Sign up" />} />
+          <Route
+            exact
+            path="/forgotpassword"
+            element={<ForgotPassword title="ForgotPassword" />}
+          />
+          <Route
+            exact
+            path="/resetpassword/:token"
+            element={<ResetPassword title="ReseetPassword" />}
+          />
+        </Route>
 
-      <Route element={<IsNotLogin/>}>
-        <Route exact path="/login"  element={<Login title="Login"/>}/>
-        <Route exact path="/signup"  element={<SingUp title="Sign up"/>}/>
-        <Route exact path="/forgotpassword"  element={<ForgotPassword title="ForgotPassword"/>}/>       
-        <Route exact path="/resetpassword/:token"  element={<ResetPassword title="ReseetPassword"/>}/>
-      </Route>
+        <Route element={<IsLogin />}>
+          <Route exact path="/Cart" element={<CartPage title="Cart" />} />
+          <Route exact path="/orders" element={<OrdersPage />} />
+          <Route
+            exact
+            path="/paymentSuccess"
+            element={<PaymentSuccess title="PaymentSuccess" />}
+          />
+        </Route>
 
-      <Route element={<IsLogin/>}>
-        <Route exact path="/Cart"  element={<CartPage title="Cart"/>}/>
-        <Route exact path='/orders' element={<OrdersPage/>} />
-        <Route exact path="/paymentSuccess"  element={<PaymentSuccess title="PaymentSuccess"/>}/>
-      </Route>
-    
-      <Route exact path="/"  element={<Home title="Home" />}  />     
-      <Route exact path="/aboutus"  element={<Aboutus title="About" />}  />     
-      <Route exact path="/products/:category"  element={<ProductList title="Products"/>}/>
-      <Route exact path="/product/:id"  element={<ProductPage title="Product"/>}/>
-      <Route exact path="/address" element={<GetUserAddress/>} />
-    </Routes>
-    <MessageComponent/>
-    <BackToTopBTN/>  
+        <Route exact path="/Home" element={<Home title="Home" />} />
+        <Route exact path="/" element={<Aboutus title="About" />} />
+        <Route
+          exact
+          path="/ComplainRegister"
+          element={<ComplainRegister title="ComplainRegister" />}
+        />
+        <Route exact path="/Services" element={<Services title="Services" />} />
+        <Route
+          exact
+          path="/products/:category"
+          element={<ProductList title="Products" />}
+        />
+        <Route
+          exact
+          path="/product/:id"
+          element={<ProductPage title="Product" />}
+        />
+        <Route exact path="/address" element={<GetUserAddress />} />
+      </Routes>
+      <MessageComponent />
+      <BackToTopBTN />
     </>
   );
 };

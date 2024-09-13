@@ -54,32 +54,31 @@ const Button = styled.button`
 `
 
 const Container = styled.div`
-    position: relative;
-    margin: 3px;
-    width: 400px;
-    height: 500px;
-    max-width: 100%;
-    overflow: hidden;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 3px;
+  width: 400px;
+  height: 500px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
-    :hover {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    }
-    
-    :hover ${Image} {
-        transform: scale(1.1)
-    }
+  :hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
 
-    &:hover ${Info}{
-        backdrop-filter: blur(3px);
-        background-color: rgba(0,0,0, 0.2);
-    }
+  :hover ${Image} {
+    transform: scale(1.1);
+  }
 
-`
+  &:hover ${Info} {
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+`;
 
 
     const link = {
