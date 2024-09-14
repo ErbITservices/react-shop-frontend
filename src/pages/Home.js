@@ -31,7 +31,7 @@ const Home = (props) => {
  
   //to change title as soon as component mounts
   useEffect(() => {
-    document.title = `SatnamCreation - ${props.title}`
+    document.title = `PanaraIt - ${props.title}`
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

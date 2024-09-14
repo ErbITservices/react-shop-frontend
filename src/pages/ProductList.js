@@ -73,7 +73,7 @@ function ProductList(props) {
     
     //to change title as soon as component mounts
     useEffect(() => {
-        document.title = `SatnamCreation - ${props.title}`
+        document.title = `PanaraIt - ${props.title}`
       }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -82,7 +82,7 @@ function ProductList(props) {
       <Navbar />
       <Title>{cat || "All Products"}</Title>
       <FilterContainer>
-        <Filter>
+        {/* <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFiters}>
             <Options defaultValue>Color</Options>
@@ -102,7 +102,7 @@ function ProductList(props) {
             <Options>XXL</Options>
             <Options>XXXL</Options>
           </Select>
-        </Filter>
+        </Filter> */}
         <Filter>
           <FilterText>Sort Products:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>

@@ -261,7 +261,7 @@ function Navbar() {
             style={{ backgroundImage: `url(${logo})` }}
           ></Logo>
 
-          <a href="/aboutus" className="highlight">
+          <a href="/" className="highlight">
             About US
           </a>
           <a href="/Services" className="highlight">
